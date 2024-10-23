@@ -20,6 +20,10 @@ export default async function Home() {
 
   const data = await getData();
 
+  if (!data) {
+    return null;
+  }
+
   console.log(data);
 
   return (
