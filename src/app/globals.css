@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.side-container {
+  @apply px-5 xxl:px-0 md:max-w-[1390px];
+}
+
+.gradient-text {
+  background: var(
+    --Brand-Gradation-txt,
+    linear-gradient(135deg, #ff4e83 0%, #ffbb54 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-card {
+  background: var(
+    --Plan-,
+    linear-gradient(290deg, #ff7e7e 1.48%, #f05f82 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-circle-wrapper {
+  background: linear-gradient(
+    135deg,
+    #ff4e83,
+    #ffbb54
+  ); /* Gradient for border */
+  padding: 3px; /* Adjust to control the thickness of the gradient border */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.gradient-circle {
+  position: relative;
+  background-color: #141414;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-circle::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #ff4e83, #ffbb54);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.feature-gradient-text {
+  @apply text-center text-[#ff4e83] text-base md:text-xl lg:text-[32px] font-bold leading-[17.60px] lg:leading-[38.40px] w-[70px] md:w-[100px] lg:w-[150px] transition-all;
+}
+
+.about-gradient {
+  background: linear-gradient(96deg, #ff4e83 40%, #ffbb54 71.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.separator-desk {
+  opacity: 0.4;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 53.75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.prevWorkDot {
+  display: flex;
+  position: absolute;
+  margin-top: 17px;
+  left: 24.4%;
+  right: -50%;
+}
+
+.box-gradient {
+  border-radius: 19px;
+  background: var(
+    --Brand-Gradation-txt,
+    linear-gradient(135deg, #ff4e83 0%, #ffbb54 100%)
+  );
+  border-radius: 20px;
+  border: 3px solid var(--Brand-Gradation-txt, #ff4e83);
+  background: #141414;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.inq-text-gradient {
+  background: linear-gradient(96deg, #ff4e83 0.62%, #ffbb54 97.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.custom-input {
+  font-weight: 400;
+}
+
+.custom-input::placeholder {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.custom-textarea {
+  width: 100%;
+  background-color: #141414;
+  color: white;
+  resize: none;
+  outline: none;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  @apply h-[294px] md:h-[274px];
+}
+
+.custom-textarea::placeholder {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.6);
+}
