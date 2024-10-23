@@ -7,14 +7,18 @@ import MakingProcessSection from "@/components/sections/MakingProcessSection";
 import PreviousWorkSection from "@/components/sections/PreviousWorkSection";
 import React from "react";
 import FormSection from "@/components/sections/FormSection";
+import { ApiDataType } from "@/types/api.types";
 
-const Homepage = () => {
+interface HomeProps {
+  data: ApiDataType;
+}
+const Homepage: React.FC<HomeProps> = ({ data }) => {
   return (
     <div>
       <Header />
-      <HeroSection />
+      <HeroSection imageData={data.heroImage} />
       <AboutSection />
-      <PreviousWorkSection />
+      <PreviousWorkSection imageData={data.prevWorkImage} />
       <MakingProcessSection />
       <FormSection />
     </div>

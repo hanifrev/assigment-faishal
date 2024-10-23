@@ -2,12 +2,16 @@ import Image from "next/image";
 import React from "react";
 import HeroCirlce from "../atoms/HeroCirlce";
 
-const HeroSection = () => {
+interface HeroProps {
+  imageData: string;
+}
+
+const HeroSection: React.FC<HeroProps> = ({ imageData }) => {
   return (
     <>
       <HeroCirlce />
       <Image
-        src="/heroimg.png"
+        src={imageData ? imageData : "/heroimg.png"}
         alt=""
         width={2000}
         height={900}
